@@ -3,13 +3,10 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Smartphone, Globe, Users } from 'lucide-react'
 import Link from 'next/link'
-import ThreeBackground from './ThreeBackground'
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center px-6 bg-slate-50 overflow-hidden">
-      {/* Three.js Background */}
-      <ThreeBackground sectionType="hero" />
+    <section className="relative h-screen flex items-center justify-center px-6 bg-transparent overflow-hidden">
       
       {/* Logo in top left */}
       <motion.div

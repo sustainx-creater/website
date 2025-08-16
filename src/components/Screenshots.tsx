@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight, Play, Smartphone, Zap, Palette } from 'lucide-react'
-import ThreeBackground from './ThreeBackground'
 
 const screenshots = [
   {
@@ -52,8 +51,6 @@ export default function Screenshots() {
 
   return (
     <section id="screenshots" className="py-24 px-6 bg-slate-50 relative overflow-hidden">
-      {/* Three.js Background for Screenshots */}
-      <ThreeBackground sectionType="screenshots" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
