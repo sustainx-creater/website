@@ -16,14 +16,10 @@ export const metadata: Metadata = {
   title: "EZMove - Immigration Made Simple",
   description: "Streamline your immigration process with EZMove. Professional visa assistance, document management, and expert guidance for your journey to a new country.",
   icons: {
-    // Prefer app icon files; fall back to public JPG
-    icon: [
-      { url: '/icon.png', type: 'image/png' },
-      { url: '/favicon.ico', rel: 'icon' },
-      { url: '/assets/favicon/EZmove.jpg', type: 'image/jpeg' },
-    ],
-    shortcut: ['/favicon.ico', '/assets/favicon/EZmove.jpg'],
-    apple: ['/apple-touch-icon.png', '/assets/favicon/EZmove.jpg'],
+  // Use app icon and apple touch icon only to avoid conflicts
+  icon: [{ url: '/icon.png', type: 'image/png' }],
+  apple: ['/apple-touch-icon.png'],
+  shortcut: ['/icon.png'],
   },
 };
 
