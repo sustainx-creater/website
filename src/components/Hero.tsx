@@ -167,18 +167,18 @@ export default function Hero() {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="absolute top-8 left-8 z-20"
+        className="absolute top-4 left-4 md:top-8 md:left-8 z-20"
       >
-        <div className="flex items-center gap-3 bg-white/90 backdrop-blur-lg rounded-2xl px-6 py-3 shadow-2xl border border-white/30">
-          <img src="/assets/images/ez.png" alt="EZMove Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
-          <span className="text-2xl md:text-3xl font-bold text-amber-600">EZMove</span>
+        <div className="flex items-center gap-2 md:gap-3 bg-white/90 backdrop-blur-lg rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-3 shadow-2xl border border-white/30">
+          <img src="/assets/images/ez.png" alt="EZMove Logo" className="w-8 h-8 md:w-12 md:h-12 lg:w-14 lg:h-14 object-contain" />
+          <span className="text-lg md:text-2xl lg:text-3xl font-bold text-amber-600">EZMove</span>
         </div>
       </motion.div>
       
       {/* Subtle grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none opacity-30"></div>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center pt-16 md:pt-0">
         {/* Main content with advanced 3D effects */}
         <motion.div
           initial={{ opacity: 0, y: 80, rotateX: 15, scale: 0.9 }}
@@ -192,7 +192,7 @@ export default function Hero() {
           style={{ perspective: '1000px' }}
         >
           <motion.h1 
-            className="text-7xl md:text-9xl font-bold text-slate-900 mb-6 tracking-tight relative"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-bold text-slate-900 mb-6 tracking-tight relative"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -223,7 +223,7 @@ export default function Hero() {
             </span>
           </motion.h1>
           <motion.p 
-            className="text-2xl md:text-3xl text-slate-600 font-light leading-relaxed max-w-3xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-600 font-light leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
