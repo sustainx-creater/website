@@ -1,65 +1,45 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { 
-  FileText, 
-  MessageCircle, 
-  Home, 
-  Users, 
-  BookOpen, 
-  Shield, 
-  Clock, 
-  Award 
-} from 'lucide-react'
+import { useEffect, useState } from 'react'
+import Lottie from 'lottie-react'
 
 const features = [
   {
-    icon: FileText,
+    lottieFile: 'visa.json',
     title: 'Visa Application Tracker',
     description: 'Track your visa application status in real-time with detailed progress updates and notifications.',
     color: 'emerald'
   },
   {
-    icon: MessageCircle,
+    lottieFile: 'chatbot.json',
     title: 'AI-Powered Chatbot',
     description: 'Get instant answers to immigration questions with our intelligent RAG-enabled assistant.',
     color: 'teal'
   },
   {
-    icon: Home,
+    lottieFile: 'House.json',
     title: 'Housing Solutions',
     description: 'Find verified accommodation with detailed neighborhood insights and virtual tours.',
     color: 'cyan'
   },
   {
-    icon: Users,
+    lottieFile: 'community.json',
     title: 'Community Platform',
     description: 'Connect with fellow immigrants, join local groups, and build your network in Ireland.',
     color: 'blue'
   },
   {
-    icon: BookOpen,
+    lottieFile: 'Library.json',
     title: 'Resource Library',
     description: 'Access comprehensive guides, articles, and resources about living and working in Ireland.',
     color: 'purple'
   },
   {
-    icon: Shield,
+    lottieFile: 'secure.json',
     title: 'Secure & Private',
     description: 'Your personal data is protected with enterprise-grade security and privacy measures.',
     color: 'green'
-  },
-  {
-    icon: Clock,
-    title: '24/7 Support',
-    description: 'Round-the-clock assistance through multiple channels including chat, email, and phone.',
-    color: 'orange'
-  },
-  {
-    icon: Award,
-    title: 'Expert Verified',
-    description: 'All information and guidance is verified by immigration experts and legal professionals.',
-    color: 'pink'
   }
 ]
 
@@ -75,6 +55,30 @@ const colorClasses = {
 }
 
 export default function Features() {
+  const [lottieAnimations, setLottieAnimations] = useState<{[key: string]: any}>({});
+
+  useEffect(() => {
+    // Load all Lottie files
+    const loadLottieFiles = async () => {
+      try {
+        const lottieFiles = ['visa.json', 'chatbot.json', 'House.json', 'community.json', 'Library.json', 'secure.json'];
+        const loadedAnimations: {[key: string]: any} = {};
+
+        for (const file of lottieFiles) {
+          const response = await fetch(`/assets/lottiefiles/${file}`);
+          const animationData = await response.json();
+          loadedAnimations[file] = animationData;
+        }
+
+        setLottieAnimations(loadedAnimations);
+      } catch (error) {
+        console.error('Error loading Lottie files:', error);
+      }
+    };
+
+    loadLottieFiles();
+  }, []);
+
   return (
     <section id="features" className="py-20 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -88,12 +92,12 @@ export default function Features() {
           <h2 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
             Powerful <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Features</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto text-justify">
             Everything you need to make your immigration journey smooth, informed, and successful
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -104,11 +108,19 @@ export default function Features() {
               whileHover={{ y: -10 }}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100"
             >
-              <div className={`w-16 h-16 rounded-2xl ${colorClasses[feature.color as keyof typeof colorClasses]} flex items-center justify-center mb-6`}>
-                <feature.icon className="w-8 h-8" />
+              <div className="flex justify-center mb-6">
+                {lottieAnimations[feature.lottieFile] ? (
+                  <Lottie 
+                    animationData={lottieAnimations[feature.lottieFile]} 
+                    style={{ width: 80, height: 80 }}
+                    loop={true}
+                  />
+                ) : (
+                  <div className="w-20 h-20 bg-gray-300 rounded animate-pulse"></div>
+                )}
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-4">{feature.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+              <p className="text-slate-600 leading-relaxed text-justify">{feature.description}</p>
             </motion.div>
           ))}
         </div>

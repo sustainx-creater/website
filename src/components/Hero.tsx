@@ -160,8 +160,8 @@ export default function Hero() {
         className="absolute top-8 left-8 z-20"
       >
         <div className="flex items-center gap-3 bg-white/90 backdrop-blur-lg rounded-2xl px-6 py-3 shadow-2xl border border-white/30">
-          <img src="/assets/images/ez.png" alt="EZMove Logo" className="w-10 h-10 object-contain" />
-          <span className="text-2xl font-bold text-amber-600">EZMove</span>
+          <img src="/assets/images/ez.png" alt="EZMove Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
+          <span className="text-2xl md:text-3xl font-bold text-amber-600">EZMove</span>
         </div>
       </motion.div>
       
