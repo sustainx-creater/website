@@ -3,11 +3,155 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Smartphone, Globe, Users } from 'lucide-react'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 export default function Hero() {
+  useEffect(() => {
+    // Load particles.js from CDN
+    const particlesScript = document.createElement('script');
+    particlesScript.src = 'http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    particlesScript.async = true;
+    
+    particlesScript.onload = () => {
+      // Initialize particles with your exact configuration
+      if (window.particlesJS) {
+        window.particlesJS("particles-js", {
+          "particles": {
+            "number": {
+              "value": 87,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffb400"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 0.5,
+              "random": false,
+              "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 3,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 144.30708547789706,
+              "color": "#ffcb25",
+              "opacity": 0.15232414578222467,
+              "width": 1.2827296486924182
+            },
+            "move": {
+              "enable": true,
+              "speed": 6,
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+              }
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "repulse"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "push"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 400,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 200,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true
+        });
+      }
+    };
+
+    document.head.appendChild(particlesScript);
+
+    // Cleanup
+    return () => {
+      if (document.head.contains(particlesScript)) {
+        document.head.removeChild(particlesScript);
+      }
+    };
+  }, []);
+
   return (
-    <section className="relative h-screen flex items-center justify-center px-6 bg-transparent overflow-hidden">
-      
+    <section className="relative h-screen flex items-center justify-center px-6 overflow-hidden">
+      {/* Particles.js container */}
+      <div 
+        id="particles-js" 
+        className="absolute inset-0 z-0"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backgroundColor: '#f5faf7'
+        }}
+      ></div>
+
       {/* Logo in top left */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
