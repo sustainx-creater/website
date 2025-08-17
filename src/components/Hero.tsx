@@ -7,12 +7,21 @@ import { useEffect } from 'react'
 
 export default function Hero() {
   useEffect(() => {
-    // Load particles.js from CDN
+    // Load particles.js from HTTPS CDN with local fallback (fixes Netlify mixed-content blocking)
     const particlesScript = document.createElement('script');
-    particlesScript.src = 'http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    particlesScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
     particlesScript.async = true;
     
-    particlesScript.onload = () => {
+    // Fallback to local copy if CDN fails
+    particlesScript.onerror = () => {
+      const fallbackScript = document.createElement('script');
+      fallbackScript.src = '/particles.js-master/particles.min.js';
+      fallbackScript.async = true;
+      fallbackScript.onload = initParticles;
+      document.head.appendChild(fallbackScript);
+    };
+    
+    const initParticles = () => {
       // Initialize particles with your exact configuration
       if (window.particlesJS) {
         window.particlesJS("particles-js", {
@@ -128,6 +137,7 @@ export default function Hero() {
       }
     };
 
+    particlesScript.onload = initParticles;
     document.head.appendChild(particlesScript);
 
     // Cleanup
