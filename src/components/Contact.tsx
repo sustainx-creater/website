@@ -3,8 +3,13 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, Building, DollarSign, Calendar } from 'lucide-react'
+import { useUserDataCollection } from './useUserDataCollection'
+import { useGoogleAnalytics } from './GoogleAnalytics'
 
 export default function Contact() {
+  const { collectFormData, trackInteraction, hasConsent } = useUserDataCollection()
+  const { trackEvent: trackGAEvent, trackConversion } = useGoogleAnalytics()
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,6 +34,21 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
     
+    // Track form interaction if analytics consent is given
+    trackInteraction('contact_form_submission', {
+      formType: 'investment_inquiry',
+      hasCompany: !!formData.company,
+      investmentRange: formData.investmentRange
+    })
+    
+    // Track Google Analytics event
+    trackGAEvent('form_submit', {
+      form_name: 'contact_form',
+      form_type: 'investment_inquiry',
+      event_category: 'lead_generation',
+      event_label: 'contact_form_submission'
+    })
+    
     try {
       const response = await fetch('https://formspree.io/f/mdkdjydb', {
         method: 'POST',
@@ -44,12 +64,36 @@ export default function Contact() {
           investmentRange: formData.investmentRange,
           message: formData.message,
           meetingPreference: formData.meetingPreference,
-          _subject: 'New Investment Inquiry - EZMove'
+          _subject: 'New Investment Inquiry - EZMove',
+          // Include consent status for compliance
+          consentGiven: hasConsent('necessary'),
+          analyticsConsent: hasConsent('analytics'),
+          marketingConsent: hasConsent('marketing')
         })
       })
       
       if (response.ok) {
         setIsSubmitted(true)
+        
+        // Track successful conversion in Google Analytics
+        trackConversion('AW-CONVERSION-ID/contact_form_conversion') // Replace with your actual conversion ID
+        trackGAEvent('conversion', {
+          event_category: 'lead_generation',
+          event_label: 'contact_form_success',
+          value: 1
+        })
+        
+        // Collect form data based on user consent
+        collectFormData({
+          formType: 'investment_inquiry',
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          role: formData.role,
+          investmentRange: formData.investmentRange,
+          submissionTime: new Date().toISOString()
+        }, 'contact_form')
+        
       } else {
         console.error('Form submission failed')
       }
@@ -197,7 +241,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-slate-900 placeholder-slate-500"
                     placeholder="John Doe"
                   />
                 </div>
@@ -211,7 +255,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-slate-900 placeholder-slate-500"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -227,7 +271,7 @@ export default function Contact() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-slate-900 placeholder-slate-500"
                     placeholder="Acme Ventures"
                   />
                 </div>
@@ -240,7 +284,7 @@ export default function Contact() {
                     name="role"
                     value={formData.role}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-slate-900 placeholder-slate-500"
                     placeholder="Managing Partner"
                   />
                 </div>
@@ -255,7 +299,7 @@ export default function Contact() {
                     name="investmentRange"
                     value={formData.investmentRange}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-slate-900"
                   >
                     <option value="">Select range</option>
                     <option value="50k-100k">€50K - €100K</option>
@@ -273,7 +317,7 @@ export default function Contact() {
                     name="meetingPreference"
                     value={formData.meetingPreference}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-slate-900"
                   >
                     <option value="">Select preference</option>
                     <option value="video">Video Call</option>
@@ -293,7 +337,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                  className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-slate-900 placeholder-slate-500"
                   placeholder="Tell us about your investment thesis and what interests you about EZMove..."
                 />
               </div>

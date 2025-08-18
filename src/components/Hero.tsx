@@ -4,9 +4,20 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Smartphone, Globe, Users } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import { useAnalytics } from './useUserDataCollection'
+import { useGoogleAnalytics } from './GoogleAnalytics'
 
 export default function Hero() {
+  const { trackPageView, trackEvent } = useAnalytics()
+  const { trackPageView: trackGAPageView, trackEvent: trackGAEvent } = useGoogleAnalytics()
+  
   useEffect(() => {
+    // Track page view for internal analytics (only if user consented)
+    trackPageView('/home')
+    
+    // Track page view for Google Analytics (only if user consented)
+    trackGAPageView('/home')
+    
     // Load particles.js from HTTPS CDN with local fallback (fixes Netlify mixed-content blocking)
     const particlesScript = document.createElement('script');
     particlesScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
@@ -251,6 +262,15 @@ export default function Hero() {
             >
               <Link
                 href="#contact"
+                onClick={() => {
+                  trackEvent('cta_click', { button: 'get_started', location: 'hero' })
+                  trackGAEvent('cta_click', { 
+                    button_name: 'get_started',
+                    location: 'hero',
+                    event_category: 'engagement',
+                    event_label: 'hero_get_started'
+                  })
+                }}
                 className="group relative bg-amber-500 text-white px-12 py-5 rounded-full font-semibold text-lg flex items-center gap-3 shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 hover:bg-amber-600 overflow-hidden"
               >
                 <span className="relative z-10">Get Started</span>
@@ -282,6 +302,15 @@ export default function Hero() {
             >
               <Link
                 href="#screenshots"
+                onClick={() => {
+                  trackEvent('cta_click', { button: 'view_demo', location: 'hero' })
+                  trackGAEvent('cta_click', { 
+                    button_name: 'view_demo',
+                    location: 'hero',
+                    event_category: 'engagement',
+                    event_label: 'hero_view_demo'
+                  })
+                }}
                 className="group bg-white/90 backdrop-blur-lg text-slate-700 px-12 py-5 rounded-full font-semibold text-lg border-2 border-slate-200/50 hover:border-amber-400 hover:text-amber-600 transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden"
               >
                 <span className="relative z-10">View Demo</span>
