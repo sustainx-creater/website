@@ -18,7 +18,7 @@ export default function About() {
             About <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">EZMove</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            We're revolutionizing the immigration experience by combining cutting-edge technology with deep understanding of the challenges faced by international students and professionals moving to Ireland.
+            We&apos;re revolutionizing the immigration experience by combining cutting-edge technology with deep understanding of the challenges faced by international students and professionals moving to Ireland.
           </p>
         </motion.div>
 

@@ -5,9 +5,11 @@ import { useCookieConsent } from '@/components/CookieConsent';
 import { useGoogleAnalytics } from '@/components/GoogleAnalytics';
 
 export default function PrivacyTestPage() {
-  const { consent, hasConsent, getUserData } = useCookieConsent();
+  const { consent, getUserData } = useCookieConsent();
   const { trackEvent, trackPageView, isTrackingEnabled } = useGoogleAnalytics();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [userData, setUserData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [backendData, setBackendData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -172,7 +174,7 @@ export default function PrivacyTestPage() {
               </div>
             ) : (
               <div className="text-center py-8 text-gray-500">
-                <p>Click "Fetch Data" to load backend data.</p>
+                <p>Click &quot;Fetch Data&quot; to load backend data.</p>
               </div>
             )}
           </div>

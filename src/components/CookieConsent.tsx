@@ -30,7 +30,7 @@ interface CookieConsentContextType {
   openPreferences: () => void;
   closePreferences: () => void;
   hasConsent: (category: keyof CookieConsent) => boolean;
-  getUserData: () => any;
+  getUserData: () => UserConsentData | null;
 }
 
 // Cookie categories configuration
@@ -271,7 +271,7 @@ const CookieBanner: React.FC = () => {
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
-                  By clicking "Accept All", you consent to our use of cookies.{' '}
+                  By clicking &quot;Accept All&quot;, you consent to our use of cookies.{' '}
                   <button 
                     onClick={openPreferences}
                     className="text-emerald-600 hover:text-emerald-700 underline font-medium"

@@ -8,8 +8,8 @@ const GA_MEASUREMENT_ID = 'G-CTB2RNTK60';
 
 declare global {
   interface Window {
-    dataLayer?: any[];
-    gtag?: (...args: any[]) => void;
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -34,8 +34,8 @@ const GoogleAnalytics: React.FC = () => {
 
     // Initialize dataLayer
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
-      window.dataLayer?.push(arguments);
+    window.gtag = function(...args: unknown[]) {
+      window.dataLayer?.push(args);
     };
 
     // Load the Google Analytics script
@@ -92,7 +92,7 @@ const GoogleAnalytics: React.FC = () => {
 export const useGoogleAnalytics = () => {
   const { hasConsent } = useCookieConsent();
 
-  const trackEvent = (eventName: string, parameters?: any) => {
+  const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
     if (hasConsent('analytics') && window.gtag) {
       window.gtag('event', eventName, {
         ...parameters,

@@ -27,7 +27,7 @@ export interface UserConsentData {
     screenResolution: string;
     interactions?: Array<{
       action: string;
-      details: any;
+      details: Record<string, unknown>;
       timestamp: string;
       url: string;
     }>;
@@ -43,13 +43,13 @@ export interface UserConsentData {
     theme: string;
     language: string;
     timezone: string;
-    userSettings?: Record<string, any>;
+    userSettings?: Record<string, unknown>;
   };
   formSubmissions?: Array<{
     type: string;
     formType: string;
     timestamp: string;
-    data: any;
+    data: Record<string, unknown>;
   }>;
 }
 
@@ -137,7 +137,7 @@ export class DataStorageManager {
   }
 
   // Add form submission data
-  async addFormSubmission(formData: any, formType: string): Promise<void> {
+  async addFormSubmission(formData: Record<string, unknown>, formType: string): Promise<void> {
     const userData = this.getUserData();
     if (userData) {
       userData.formSubmissions = userData.formSubmissions || [];
@@ -152,7 +152,7 @@ export class DataStorageManager {
   }
 
   // Add analytics interaction
-  async addInteraction(action: string, details: any): Promise<void> {
+  async addInteraction(action: string, details: Record<string, unknown>): Promise<void> {
     const userData = this.getUserData();
     if (userData?.consent.analytics && userData.analytics) {
       userData.analytics.interactions = userData.analytics.interactions || [];

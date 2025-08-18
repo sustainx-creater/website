@@ -1,4 +1,3 @@
-// /src/app/api/user-data/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 
 // This is a basic example - you'd typically use a proper database
@@ -13,13 +12,13 @@ interface UserConsentData {
     marketing: boolean;
     preferences: boolean;
   };
-  session?: any;
-  analytics?: any;
-  marketing?: any;
-  preferences?: any;
-  formSubmissions?: any[];
-  browserInfo?: any;
-  pageInfo?: any;
+  session?: Record<string, unknown>;
+  analytics?: Record<string, unknown>;
+  marketing?: Record<string, unknown>;
+  preferences?: Record<string, unknown>;
+  formSubmissions?: Record<string, unknown>[];
+  browserInfo?: Record<string, unknown>;
+  pageInfo?: Record<string, unknown>;
 }
 
 // In production, you'd use a proper database
@@ -149,22 +148,6 @@ export async function DELETE(request: NextRequest) {
 
 function generateUserId(): string {
   return 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-}
-
-// Example integrations (implement based on your needs)
-
-async function sendToGoogleAnalytics(data: UserConsentData) {
-  // Example: Send to Google Analytics 4
-  // gtag('config', 'GA_MEASUREMENT_ID', {
-  //   user_id: data.userId,
-  //   custom_map: { 'custom_parameter': 'value' }
-  // });
-}
-
-async function sendToMarketingPlatforms(data: UserConsentData) {
-  // Example: Send to Facebook Pixel, LinkedIn, etc.
-  // fbq('init', 'YOUR_PIXEL_ID');
-  // fbq('track', 'PageView', { user_id: data.userId });
 }
 
 /* 
