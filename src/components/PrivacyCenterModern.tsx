@@ -196,7 +196,7 @@ export const PrivacyCenter: React.FC = () => {
               </div>
               <h2 className="text-2xl font-bold mb-4 text-gray-900">Cookie Settings</h2>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                Manage which cookies and data collection methods you're comfortable with. 
+                Manage which cookies and data collection methods you&apos;re comfortable with. 
                 You can update these preferences at any time.
               </p>
               <button
@@ -348,7 +348,7 @@ export const PrivacyCenter: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">No Data Collected</h3>
                 <p className="text-gray-600 max-w-md mx-auto">
-                  We haven't collected any personal data yet. When you interact with our website, 
+                  We haven&apos;t collected any personal data yet. When you interact with our website, 
                   the data we collect (based on your consent) will appear here.
                 </p>
               </div>

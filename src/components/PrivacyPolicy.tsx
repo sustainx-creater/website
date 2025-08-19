@@ -229,7 +229,7 @@ export const PrivacyPolicy: React.FC = () => {
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Policy Updates</h2>
           <p className="text-gray-700 leading-relaxed">
             We may update this privacy policy from time to time. We will notify you of any material changes 
-            by posting the new policy on this page and updating the "Last updated" date. We encourage you to 
+            by posting the new policy on this page and updating the &quot;Last updated&quot; date. We encourage you to 
             review this policy periodically.
           </p>
         </section>

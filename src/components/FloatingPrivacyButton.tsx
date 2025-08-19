@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Settings, Shield, X, Cookie } from 'lucide-react';
+import { Shield, X, Cookie } from 'lucide-react';
 import { useCookieConsent } from './CookieConsent';
 import PrivacyCenter from './PrivacyCenterModern';
 

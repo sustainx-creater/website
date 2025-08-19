@@ -200,7 +200,7 @@ export default function Team() {
         >
           <h3 className="text-4xl font-bold mb-6">Join Our Mission</h3>
           <p className="text-xl text-emerald-100 max-w-3xl mx-auto mb-8">
-            We're always looking for passionate individuals who want to make a real impact on people's lives. 
+            We&apos;re always looking for passionate individuals who want to make a real impact on people&apos;s lives. 
             Join us in revolutionizing the immigration experience.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

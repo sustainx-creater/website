@@ -43,18 +43,8 @@ const features = [
   }
 ]
 
-const colorClasses = {
-  emerald: 'bg-emerald-100 text-emerald-600',
-  teal: 'bg-teal-100 text-teal-600',
-  cyan: 'bg-cyan-100 text-cyan-600',
-  blue: 'bg-blue-100 text-blue-600',
-  purple: 'bg-purple-100 text-purple-600',
-  green: 'bg-green-100 text-green-600',
-  orange: 'bg-orange-100 text-orange-600',
-  pink: 'bg-pink-100 text-pink-600'
-}
-
 export default function Features() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [lottieAnimations, setLottieAnimations] = useState<{[key: string]: any}>({});
 
   useEffect(() => {
@@ -62,6 +52,7 @@ export default function Features() {
     const loadLottieFiles = async () => {
       try {
         const lottieFiles = ['visa.json', 'chatbot.json', 'House.json', 'community.json', 'Library.json', 'secure.json'];
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const loadedAnimations: {[key: string]: any} = {};
 
         for (const file of lottieFiles) {
@@ -138,7 +129,7 @@ export default function Features() {
               Ready to Transform Immigration?
             </h3>
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              Join thousands of successful immigrants who've made their journey easier with EZMove
+              Join thousands of successful immigrants who&apos;ve made their journey easier with EZMove
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

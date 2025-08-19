@@ -5,9 +5,10 @@ import { dataStorage } from '@/lib/dataStorage';
 
 // User data collection utilities
 export const useUserDataCollection = () => {
-  const { hasConsent, getUserData } = useCookieConsent();
+  const { hasConsent } = useCookieConsent();
 
   // Collect form data only if user has given consent
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const collectFormData = async (formData: any, formType: string) => {
     if (!hasConsent('necessary')) return;
 
@@ -20,6 +21,7 @@ export const useUserDataCollection = () => {
   };
 
   // Track user interactions (only if analytics consent is given)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const trackInteraction = async (action: string, details?: any) => {
     if (!hasConsent('analytics')) return;
 
@@ -32,6 +34,7 @@ export const useUserDataCollection = () => {
   };
 
   // Store user preferences (only if preferences consent is given)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const saveUserPreference = async (key: string, value: any) => {
     if (!hasConsent('preferences')) return;
 
@@ -89,6 +92,7 @@ export const useAnalytics = () => {
     console.log('Page view tracked:', page || window.location.pathname);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const trackEvent = (eventName: string, parameters?: any) => {
     if (!hasConsent('analytics')) return;
     

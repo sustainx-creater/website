@@ -157,7 +157,7 @@ export default function Hero() {
         document.head.removeChild(particlesScript);
       }
     };
-  }, []);
+  }, [trackPageView, trackGAPageView]); // Add missing dependencies
 
   return (
     <section className="relative h-screen flex items-center justify-center px-6 overflow-hidden">

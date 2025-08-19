@@ -119,7 +119,7 @@ export default function Contact() {
             </div>
             <h3 className="text-4xl font-bold text-slate-800 mb-4">Thank You!</h3>
             <p className="text-xl text-slate-600 mb-8">
-              We've received your investment inquiry and will get back to you within 24 hours.
+              We&apos;ve received your investment inquiry and will get back to you within 24 hours.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
@@ -144,10 +144,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
-            Let's <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Connect</span>
+            Let&apos;s <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Connect</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Ready to be part of the immigration revolution? We'd love to hear from potential investors and partners.
+            Ready to be part of the immigration revolution? We&apos;d love to hear from potential investors and partners.
           </p>
         </motion.div>
 

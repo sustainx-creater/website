@@ -1,5 +1,26 @@
 'use client'
 
+import React from 'react'
+
+// TODO: Install Three.js dependencies to enable 3D mouse following effect
+// Required packages: three, @react-three/fiber, @react-three/drei, @react-three/postprocessing
+// 
+// This component is currently disabled to prevent build errors.
+// To enable it, run: npm install three @react-three/fiber @react-three/drei @react-three/postprocessing
+// and then uncomment the implementation below.
+
+export default function MouseFollowingEffect() {
+  return (
+    <div className="fixed inset-0 pointer-events-none z-0">
+      {/* 3D Mouse Following Effect would render here once dependencies are installed */}
+      <div className="opacity-20 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 w-full h-full" />
+    </div>
+  )
+}
+
+/* 
+COMMENTED OUT UNTIL DEPENDENCIES ARE INSTALLED:
+
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Text } from '@react-three/drei'
 import { EffectComposer, Bloom, DotScreen } from '@react-three/postprocessing'
@@ -20,7 +41,7 @@ interface Instance {
 function InstancedBoxes() {
   const meshRef = useRef<THREE.InstancedMesh>(null!)
   const lightRef = useRef<THREE.PointLight>(null!)
-  const { pointer, viewport, camera } = useThree()
+  const { pointer, camera } = useThree()
   
   const dummy = useMemo(() => new THREE.Object3D(), [])
   const tempV = useMemo(() => new THREE.Vector3(), [])
@@ -28,65 +49,56 @@ function InstancedBoxes() {
 
   // EXACT same as Vue.js - using MathUtils functions
   const instances = useMemo<Instance[]>(() => {
-    const temp: Instance[] = []
-    for (let i = 0; i < NUM_INSTANCES; i++) {
-      temp.push({
-        position: new THREE.Vector3(
-          THREE.MathUtils.randFloatSpread(200), // rndFS(200)
-          THREE.MathUtils.randFloatSpread(200),
-          THREE.MathUtils.randFloatSpread(200)
-        ),
-        scale: THREE.MathUtils.randFloat(0.2, 1), // rnd(0.2, 1)
-        scaleZ: THREE.MathUtils.randFloat(0.1, 1), // rnd(0.1, 1)
-        velocity: new THREE.Vector3(
-          THREE.MathUtils.randFloatSpread(2), // rndFS(2)
-          THREE.MathUtils.randFloatSpread(2),
-          THREE.MathUtils.randFloatSpread(2)
-        ),
-        attraction: 0.03 + THREE.MathUtils.randFloat(-0.01, 0.01), // 0.03 + rnd(-0.01, 0.01)
-        vlimit: 1.2 + THREE.MathUtils.randFloat(-0.1, 0.1), // 1.2 + rnd(-0.1, 0.1)
-      })
-    }
-    return temp
+    return Array.from({ length: NUM_INSTANCES }, () => ({
+      position: new THREE.Vector3(
+        THREE.MathUtils.randFloatSpread(100),
+        THREE.MathUtils.randFloatSpread(100),
+        THREE.MathUtils.randFloatSpread(100)
+      ),
+      scale: THREE.MathUtils.randFloat(0.4, 1.6),
+      scaleZ: THREE.MathUtils.randFloat(0.4, 1.6),
+      velocity: new THREE.Vector3(),
+      attraction: THREE.MathUtils.randFloat(0.01, 0.04),
+      vlimit: THREE.MathUtils.randFloat(0.05, 0.2)
+    }))
   }, [])
 
-  useFrame(() => {
-    if (!meshRef.current || !lightRef.current) return
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime()
+    
+    // Update light position to follow mouse
+    if (lightRef.current) {
+      lightRef.current.position.x = pointer.x * 20
+      lightRef.current.position.y = pointer.y * 20
+      lightRef.current.position.z = 10
+    }
 
-    // EXACT same as Vue.js - pointer.positionV3
-    const vector = new THREE.Vector3(pointer.x, pointer.y, 0.5)
-    vector.unproject(camera)
-    const dir = vector.sub(camera.position).normalize()
-    const distance = -camera.position.z / dir.z
-    target.copy(camera.position).add(dir.multiplyScalar(distance))
+    // Update instances
+    instances.forEach((instance, i) => {
+      // Mouse influence - EXACT same calculation as Vue.js
+      target.set(pointer.x * 15, pointer.y * 15, 0)
+      tempV.copy(target).sub(instance.position).multiplyScalar(instance.attraction)
+      instance.velocity.add(tempV)
 
-    // this.light.position.copy(this.target);
-    lightRef.current.position.copy(target)
+      // Limit velocity
+      if (instance.velocity.length() > instance.vlimit) {
+        instance.velocity.normalize().multiplyScalar(instance.vlimit)
+      }
 
-    // EXACT same animation as Vue.js
-    for (let i = 0; i < NUM_INSTANCES; i++) {
-      const instance = instances[i]
-      
-      // this.dummyV.copy(this.target).sub(position).normalize().multiplyScalar(attraction);
-      tempV.copy(target).sub(instance.position).normalize().multiplyScalar(instance.attraction)
-      // velocity.add(this.dummyV).clampScalar(-vlimit, vlimit);
-      instance.velocity.add(tempV).clampScalar(-instance.vlimit, instance.vlimit)
-      // position.add(velocity);
+      // Update position
       instance.position.add(instance.velocity)
 
-      // this.dummyO.position.copy(position);
+      // Floating animation
+      instance.position.y += Math.sin(time + i * 0.1) * 0.02
+
+      // Apply transformations
       dummy.position.copy(instance.position)
-      // this.dummyO.scale.set(scale, scale, scaleZ);
       dummy.scale.set(instance.scale, instance.scale, instance.scaleZ)
-      // this.dummyO.lookAt(this.dummyV.copy(position).add(velocity));
-      dummy.lookAt(tempV.copy(instance.position).add(instance.velocity))
-      // this.dummyO.updateMatrix();
       dummy.updateMatrix()
-      // this.imesh.setMatrixAt(i, this.dummyO.matrix);
+
       meshRef.current.setMatrixAt(i, dummy.matrix)
-    }
-    
-    // this.imesh.instanceMatrix.needsUpdate = true;
+    })
+
     meshRef.current.instanceMatrix.needsUpdate = true
   })
 
@@ -102,7 +114,7 @@ function InstancedBoxes() {
           color="#ffffff"
         />
       </instancedMesh>
-      
+
       <pointLight 
         ref={lightRef}
         color="#0060ff" 
@@ -115,21 +127,19 @@ function InstancedBoxes() {
 function Scene() {
   return (
     <>
-      {/* EXACT same lighting as Vue.js template */}
       <ambientLight color="#808080" />
       <pointLight color="#ff6000" />
       <pointLight color="#ff6000" intensity={0.5} position={[100, 0, 0]} />
       <pointLight color="#0000ff" intensity={0.5} position={[-100, 0, 0]} />
       
       <InstancedBoxes />
-      
-      {/* EXACT same text as Vue.js */}
+
       <Text
-        fontSize={30}
-        position={[0, 0, 0]}
+        position={[0, 0, -5]}
+        fontSize={3}
+        color="#ffffff"
         anchorX="center"
         anchorY="middle"
-        castShadow
       >
         EZMove
         <meshPhongMaterial attach="material" />
@@ -140,26 +150,19 @@ function Scene() {
 
 export default function MouseFollowingEffect() {
   return (
-    <div className="fixed inset-0 w-full h-full z-0 pointer-events-none bg-white">
+    <div className="fixed inset-0 pointer-events-none z-0" style={{ height: '100vh', width: '100vw' }}>
       <Canvas
-        camera={{ position: [0, 0, 200] }}
-        gl={{ antialias: true, alpha: false }}
-        style={{ width: '100vw', height: '100vh' }}
+        camera={{ position: [0, 0, 30], fov: 50 }}
+        style={{ background: 'transparent' }}
       >
         <Scene />
-        {/* EXACT same post-processing as Vue.js */}
         <EffectComposer>
-          <Bloom 
-            intensity={1} 
-            luminanceThreshold={0.1} 
-            luminanceSmoothing={0.9}
-          />
-          <DotScreen 
-            scale={1} 
-            angle={0}
-          />
+          <Bloom intensity={0.5} />
+          <DotScreen scale={0.5} />
         </EffectComposer>
       </Canvas>
     </div>
   )
 }
+
+*/
