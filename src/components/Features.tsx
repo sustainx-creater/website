@@ -129,7 +129,7 @@ export default function Features() {
               Ready to Transform Immigration?
             </h3>
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              Join thousands of successful immigrants who&apos;ve made their journey easier with EZMove
+              Be part of our closed beta testing in Ireland and help shape the future of immigration
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

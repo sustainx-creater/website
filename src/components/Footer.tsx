@@ -19,7 +19,7 @@ export default function Footer() {
           >
             <div className="mb-6">
               <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-4">
-                EZMove
+                SustainX
               </h3>
               <p className="text-slate-300 text-lg leading-relaxed max-w-md">
                 Revolutionizing the immigration experience through technology. Making the journey to Ireland simple, transparent, and stress-free.
@@ -33,7 +33,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-emerald-400 mr-3" />
-                <span className="text-slate-300">hello@ezmove.ie</span>
+                <span className="text-slate-300">teamsustainx@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-emerald-400 mr-3" />
@@ -89,7 +89,7 @@ export default function Footer() {
             <h4 className="text-xl font-bold text-white mb-6">Investors</h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:investors@ezmove.ie" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                <a href="mailto:teamsustainx@gmail.com" className="text-slate-300 hover:text-emerald-400 transition-colors">
                   Investment Opportunities
                 </a>
               </li>
@@ -109,7 +109,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="mailto:investors@ezmove.ie" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                <a href="mailto:teamsustainx@gmail.com" className="text-slate-300 hover:text-emerald-400 transition-colors">
                   Due Diligence
                 </a>
               </li>
@@ -130,7 +130,9 @@ export default function Footer() {
               <span className="text-slate-300 font-semibold">Follow Us:</span>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/ezmoveai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-slate-400 hover:text-emerald-400 transition-colors"
                   aria-label="LinkedIn"
                 >
@@ -161,7 +163,7 @@ export default function Footer() {
                 Invest Now
               </Link>
               <a
-                href="mailto:hello@ezmove.ie"
+                href="mailto:teamsustainx@gmail.com"
                 className="border border-emerald-400 text-emerald-400 px-6 py-3 rounded-full font-semibold hover:bg-emerald-400 hover:text-slate-900 transition-all duration-300"
               >
                 Get Updates
@@ -174,7 +176,7 @@ export default function Footer() {
         <div className="border-t border-slate-800 pt-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-slate-400 text-sm">
-              © 2025 EZMove Technologies Ltd. All rights reserved.
+              © 2025 SustainX Technologies Ltd. All rights reserved.
             </div>
             
             <div className="flex flex-wrap items-center gap-6 text-sm">
@@ -195,7 +197,7 @@ export default function Footer() {
           
           <div className="mt-6 text-center">
             <p className="text-slate-500 text-sm">
-              EZMove is committed to making immigration accessible for everyone. 
+              SustainX is committed to making immigration accessible for everyone. 
               <br className="hidden sm:block" />
               Registered in Ireland • Company Number: IE123456789
             </p>

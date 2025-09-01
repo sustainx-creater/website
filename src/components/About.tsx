@@ -56,7 +56,7 @@ export default function About() {
               <h3 className="text-3xl font-bold text-slate-800">Our Vision</h3>
             </div>
             <p className="text-lg text-slate-700 leading-relaxed">
-              To become the global leader in immigration technology, helping millions of people worldwide achieve their dreams of living, studying, and working in their chosen destinations.
+              To start with Ireland and help newcomers settle with ease, building a community-driven platform that connects people and simplifies the relocation experience.
             </p>
           </motion.div>
         </div>
@@ -107,54 +107,26 @@ export default function About() {
             <TrendingUp className="w-16 h-16 mx-auto mb-6 text-emerald-400" />
             <h3 className="text-4xl font-bold mb-6">Market Opportunity</h3>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              The global immigration market is experiencing unprecedented growth, with Ireland becoming one of the top destinations for international talent.
+              Ireland is becoming one of the top destinations for international talent, and we're building solutions to support this growing community.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">€12B</div>
-              <div className="text-slate-300">Global Immigration Market</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">Beta</div>
+              <div className="text-slate-300">Testing Phase</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-teal-400 mb-2">150K</div>
-              <div className="text-slate-300">Annual Immigrants to Ireland</div>
+              <div className="text-4xl font-bold text-teal-400 mb-2">Ireland</div>
+              <div className="text-slate-300">Starting Market</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-cyan-400 mb-2">25%</div>
-              <div className="text-slate-300">YoY Growth Rate</div>
+              <div className="text-4xl font-bold text-cyan-400 mb-2">2024</div>
+              <div className="text-slate-300">Founded</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-400 mb-2">95%</div>
-              <div className="text-slate-300">User Satisfaction</div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Why Invest */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
-          <h3 className="text-4xl font-bold text-slate-800 mb-8">Why Invest in EZMove?</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-              <div className="text-6xl mb-4">🚀</div>
-              <h4 className="text-xl font-bold text-slate-800 mb-4">Proven Traction</h4>
-              <p className="text-slate-600">10,000+ active users with 40% month-over-month growth</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-              <div className="text-6xl mb-4">💰</div>
-              <h4 className="text-xl font-bold text-slate-800 mb-4">Revenue Growth</h4>
-              <p className="text-slate-600">€500K ARR with clear path to €5M+ within 24 months</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
-              <div className="text-6xl mb-4">🌍</div>
-              <h4 className="text-xl font-bold text-slate-800 mb-4">Global Expansion</h4>
-              <p className="text-slate-600">Ready to scale to UK, Canada, Australia, and beyond</p>
+              <div className="text-4xl font-bold text-blue-400 mb-2">4</div>
+              <div className="text-slate-300">Team Members</div>
             </div>
           </div>
         </motion.div>

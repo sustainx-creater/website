@@ -338,9 +338,9 @@ export default function Hero() {
           className="grid grid-cols-3 gap-6 max-w-2xl mx-auto"
         >
           {[
-            { icon: Users, value: "10K+", label: "Users", color: "amber", delay: 0 },
-            { icon: Globe, value: "50+", label: "Countries", color: "emerald", delay: 0.1 },
-            { icon: Smartphone, value: "99%", label: "Success", color: "amber", delay: 0.2 }
+            { icon: Users, value: "Beta", label: "Testing", color: "amber", delay: 0 },
+            { icon: Globe, value: "1", label: "Country", color: "emerald", delay: 0.1 },
+            { icon: Smartphone, value: "Ireland", label: "Focus", color: "amber", delay: 0.2 }
           ].map((stat, index) => (
             <motion.div 
               key={stat.label}

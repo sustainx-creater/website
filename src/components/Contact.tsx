@@ -170,8 +170,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-slate-800">Email</h4>
-                    <p className="text-slate-600">investors@ezmove.ie</p>
-                    <p className="text-slate-600">hello@ezmove.ie</p>
+                    <p className="text-slate-600">teamsustainx@gmail.com</p>
+                    <p className="text-slate-600">info@sustainx.com</p>
                   </div>
                 </div>
 
