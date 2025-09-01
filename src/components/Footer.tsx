@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Linkedin, Twitter, Github, Mail, MapPin, Phone } from 'lucide-react'
+import { Linkedin, Twitter, Instagram, Mail, MapPin, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -29,15 +29,11 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 text-emerald-400 mr-3" />
-                <span className="text-slate-300">Dublin 2, Ireland</span>
+                <span className="text-slate-300">Mayor Street Lower, International Financial Services Centre, Dublin 1</span>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-emerald-400 mr-3" />
                 <span className="text-slate-300">teamsustainx@gmail.com</span>
-              </div>
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-emerald-400 mr-3" />
-                <span className="text-slate-300">+353 1 234 5678</span>
               </div>
             </div>
           </motion.div>
@@ -146,11 +142,13 @@ export default function Footer() {
                   <Twitter className="w-6 h-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://instagram.com/ezmoveai"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-slate-400 hover:text-emerald-400 transition-colors"
-                  aria-label="GitHub"
+                  aria-label="Instagram"
                 >
-                  <Github className="w-6 h-6" />
+                  <Instagram className="w-6 h-6" />
                 </a>
               </div>
             </div>
@@ -174,32 +172,15 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <div className="text-slate-400 text-sm">
               © 2025 SustainX Technologies Ltd. All rights reserved.
-            </div>
-            
-            <div className="flex flex-wrap items-center gap-6 text-sm">
-              <Link href="#" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="#" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                Cookie Policy
-              </Link>
-              <Link href="#" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                Legal
-              </Link>
             </div>
           </div>
           
           <div className="mt-6 text-center">
             <p className="text-slate-500 text-sm">
-              SustainX is committed to making immigration accessible for everyone. 
-              <br className="hidden sm:block" />
-              Registered in Ireland • Company Number: IE123456789
+              SustainX is committed to making immigration accessible for everyone.
             </p>
           </div>
         </div>

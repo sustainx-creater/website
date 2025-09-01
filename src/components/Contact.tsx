@@ -171,18 +171,6 @@ export default function Contact() {
                   <div>
                     <h4 className="text-lg font-semibold text-slate-800">Email</h4>
                     <p className="text-slate-600">teamsustainx@gmail.com</p>
-                    <p className="text-slate-600">info@sustainx.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="p-3 bg-teal-100 rounded-full mr-4">
-                    <Phone className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-slate-800">Phone</h4>
-                    <p className="text-slate-600">+353 1 234 5678</p>
-                    <p className="text-slate-600">+353 87 123 4567</p>
                   </div>
                 </div>
 
@@ -192,8 +180,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-slate-800">Office</h4>
-                    <p className="text-slate-600">Dublin 2, Ireland</p>
-                    <p className="text-slate-600">WeWork, 2 Dublin Landings</p>
+                    <p className="text-slate-600">Mayor Street Lower</p>
+                    <p className="text-slate-600">International Financial Services Centre, Dublin 1</p>
                   </div>
                 </div>
               </div>

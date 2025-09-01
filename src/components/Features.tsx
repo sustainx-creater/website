@@ -131,13 +131,14 @@ export default function Features() {
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
               Be part of our closed beta testing in Ireland and help shape the future of immigration
             </p>
-            <motion.button
+            <motion.a
+              href="mailto:teamsustainx@gmail.com?subject=Early Access Request - EZMove"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
+              className="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
             >
               Get Early Access
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>
