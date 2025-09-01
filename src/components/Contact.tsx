@@ -147,7 +147,7 @@ export default function Contact() {
             Let&apos;s <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Connect</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Ready to be part of the immigration revolution? We&apos;d love to hear from potential investors and partners.
+            Ready to be part of the relocation revolution? We&apos;d love to hear from potential investors and partners.
           </p>
         </motion.div>
 

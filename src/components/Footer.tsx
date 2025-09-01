@@ -22,7 +22,7 @@ export default function Footer() {
                 SustainX
               </h3>
               <p className="text-slate-300 text-lg leading-relaxed max-w-md">
-                Revolutionizing the immigration experience through technology. Making the journey to Ireland simple, transparent, and stress-free.
+                Revolutionizing the relocation experience through technology. Making the journey to Ireland simple, transparent, and stress-free.
               </p>
             </div>
             
@@ -182,7 +182,7 @@ export default function Footer() {
           
           <div className="mt-6 text-center">
             <p className="text-slate-500 text-sm">
-              SustainX is committed to making immigration accessible for everyone.
+              SustainX is committed to making relocation accessible for everyone.
             </p>
           </div>
         </div>

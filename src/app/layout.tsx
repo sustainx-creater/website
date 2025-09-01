@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EZMove - Immigration Made Simple",
-  description: "Streamline your immigration process with EZMove. Professional visa assistance, document management, and expert guidance for your journey to a new country.",
+  title: "EZMove - Relocation Made Simple",
+  description: "Streamline your relocation process with EZMove. Professional visa assistance, document management, and expert guidance for your journey to a new country.",
   icons: {
   // Use app icon and apple touch icon only to avoid conflicts
   icon: [{ url: '/icon.png', type: 'image/png' }],

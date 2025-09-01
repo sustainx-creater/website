@@ -14,7 +14,7 @@ const features = [
   {
     lottieFile: 'chatbot.json',
     title: 'AI-Powered Chatbot',
-    description: 'Get instant answers to immigration questions with our intelligent RAG-enabled assistant.',
+    description: 'Get instant answers to relocation questions with our intelligent RAG-enabled assistant.',
     color: 'teal'
   },
   {
@@ -84,7 +84,7 @@ export default function Features() {
             Powerful <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Features</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto text-justify">
-            Everything you need to make your immigration journey smooth, informed, and successful
+            Everything you need to make your relocation journey smooth, informed, and successful
           </p>
         </motion.div>
 
@@ -126,10 +126,10 @@ export default function Features() {
         >
           <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-3xl p-12">
             <h3 className="text-3xl font-bold text-slate-800 mb-4">
-              Ready to Transform Immigration?
+              Ready to Transform Relocation?
             </h3>
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              Be part of our closed beta testing in Ireland and help shape the future of immigration
+              Be part of our closed beta testing in Ireland and help shape the future of relocation
             </p>
             <motion.a
               href="mailto:teamsustainx@gmail.com?subject=Early Access Request - EZMove"

@@ -32,7 +32,7 @@ export default function CareersPage() {
             Join Our <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Team</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Help us build the future of immigration technology in Ireland
+            Help us build the future of relocation technology in Ireland
           </p>
         </motion.div>
 
@@ -52,7 +52,7 @@ export default function CareersPage() {
           </p>
           <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6">
             <p className="text-slate-700 font-medium">
-              But we'd love to hear from talented individuals who are passionate about immigration technology and helping people settle in Ireland!
+              But we'd love to hear from talented individuals who are passionate about relocation technology and helping people settle in Ireland!
             </p>
           </div>
         </motion.div>
@@ -89,7 +89,7 @@ export default function CareersPage() {
                 title: "Product Designer",
                 type: "Full-time",
                 location: "Dublin, Ireland", 
-                description: "UX/UI designer passionate about immigration solutions"
+                description: "UX/UI designer passionate about relocation solutions"
               }
             ].map((job, index) => (
               <div key={job.title} className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100">

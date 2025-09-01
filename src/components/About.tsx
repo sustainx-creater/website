@@ -18,7 +18,7 @@ export default function About() {
             About <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">EZMove</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            We&apos;re revolutionizing the immigration experience by combining cutting-edge technology with deep understanding of the challenges faced by international students and professionals moving to Ireland.
+            We&apos;re building technology solutions by combining cutting-edge tech with deep understanding of the challenges faced by international students and professionals moving to Ireland.
           </p>
         </motion.div>
 
@@ -38,7 +38,7 @@ export default function About() {
               <h3 className="text-3xl font-bold text-slate-800">Our Mission</h3>
             </div>
             <p className="text-lg text-slate-700 leading-relaxed">
-              To simplify and streamline the immigration process for everyone, making it accessible, transparent, and stress-free. We believe that moving to a new country should be about opportunities, not obstacles.
+              To simplify and streamline the relocation process for everyone, making it accessible, transparent, and stress-free. We believe that moving to a new country should be about opportunities, not obstacles.
             </p>
           </motion.div>
 
@@ -76,7 +76,7 @@ export default function About() {
                 <Heart className="w-10 h-10 text-emerald-600" />
               </div>
               <h4 className="text-xl font-bold text-slate-800 mb-4">Empathy First</h4>
-              <p className="text-slate-600">We understand the emotional journey of immigration and design with compassion at the core.</p>
+              <p className="text-slate-600">We understand the emotional journey of moving abroad and design with compassion at the core.</p>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-teal-100 rounded-2xl mx-auto mb-6 flex items-center justify-center">
