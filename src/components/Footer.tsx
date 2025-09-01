@@ -135,7 +135,9 @@ export default function Footer() {
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/ezmoveai"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-slate-400 hover:text-emerald-400 transition-colors"
                   aria-label="Twitter"
                 >
