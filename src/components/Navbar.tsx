@@ -21,7 +21,8 @@ export default function Navbar() {
                 alt="EZMove Logo" 
                 width={48} 
                 height={48} 
-                className="rounded-2xl transition-all duration-300" 
+                className="rounded-2xl transition-all duration-300"
+                priority
               />
               <div className="flex flex-col">
                 <span className="font-black text-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">
