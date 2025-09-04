@@ -33,7 +33,7 @@ const features = [
     lottieFile: 'Library.json',
     title: 'Resource Library',
     description: 'Access comprehensive guides, articles, and resources about living and working in Ireland.',
-    color: 'purple'
+    color: 'teal'
   },
   {
     lottieFile: 'secure.json',
@@ -103,11 +103,11 @@ export default function Features() {
                 {lottieAnimations[feature.lottieFile] ? (
                   <Lottie 
                     animationData={lottieAnimations[feature.lottieFile]} 
-                    style={{ width: 80, height: 80 }}
+                    style={{ width: 140, height: 140 }}
                     loop={true}
                   />
                 ) : (
-                  <div className="w-20 h-20 bg-gray-300 rounded animate-pulse"></div>
+                  <div className="w-36 h-36 bg-gray-300 rounded animate-pulse"></div>
                 )}
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-4">{feature.title}</h3>

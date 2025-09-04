@@ -173,18 +173,7 @@ export default function Hero() {
         }}
       ></div>
 
-      {/* Logo in top left */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="absolute top-4 left-4 md:top-8 md:left-8 z-20"
-      >
-        <div className="flex items-center gap-2 md:gap-3 bg-white/90 backdrop-blur-lg rounded-xl md:rounded-2xl px-3 py-2 md:px-6 md:py-3 shadow-2xl border border-white/30">
-          <img src="/assets/images/ez.png" alt="EZMove Logo" className="w-8 h-8 md:w-12 md:h-12 lg:w-14 lg:h-14 object-contain" />
-          <span className="text-lg md:text-2xl lg:text-3xl font-bold text-amber-600">EZMove</span>
-        </div>
-      </motion.div>
+
       
       {/* Subtle grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none opacity-30"></div>

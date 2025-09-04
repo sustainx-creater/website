@@ -9,18 +9,20 @@ const teamMembers = [
     name: 'Aditya Pandey',
     role: 'Team Lead',
     location: 'Dublin, Ireland',
-    bio: 'Team lead who overlooks all development and other activities, conducts code reviews, handles some dev work plus ML app and data analysis.',
+    bio: 'Team lead managing development activities, code reviews, and contributing to ML apps and data analysis.',
     image: '/assets/images/aditya.jpg',
     linkedin: 'https://linkedin.com/in/aditya-pa',
-    website: 'https://aditya-pandey.me/'
+    website: 'https://aditya-pandey.me/',
+    email: 'aditya@ez-move.app'
   },
   {
     name: 'Lohit Uchil',
     role: 'Developer',
     location: 'Dublin, Ireland',
-    bio: 'Developer mainly focused on security, authentication and tech advancement.',
+    bio: 'Developer specializing in security and authentication, driving technology improvements and advancements.',
     image: '/assets/images/lohit.jpg',
-    linkedin: 'https://www.linkedin.com/in/lohit-uchil/'
+    linkedin: 'https://www.linkedin.com/in/lohit-uchil/',
+    email: 'lohit@ez-move.app'
   },
   {
     name: 'Georgii Korenkov',
@@ -28,7 +30,8 @@ const teamMembers = [
     location: 'Dublin, Ireland',
     bio: 'Developer focused on housing part with ML model on housing side, plus some stakeholder communication.',
     image: '/assets/images/georgii.png',
-    linkedin: 'https://www.linkedin.com/in/georgii-korenkov/'
+    linkedin: 'https://www.linkedin.com/in/georgii-korenkov/',
+    email: 'Georgii@ez-move.app'
   },
   {
     name: 'Shivansh Bhatnagar',
@@ -36,7 +39,8 @@ const teamMembers = [
     location: 'Dublin, Ireland',
     bio: 'Developer who takes care of community part plus representation of EZMove at platforms.',
     image: '/assets/images/shivansh.jpg',
-    linkedin: 'https://linkedin.com/in/shivanshbhatnagar'
+    linkedin: 'https://linkedin.com/in/shivanshbhatnagar',
+    email: 'shivansh@ez-move.app'
   }
 ]
 
@@ -103,17 +107,16 @@ export default function Team() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 {/* Profile Image */}
-                <div className="w-24 h-24 rounded-2xl mx-auto mb-6 overflow-hidden">
+                <div className="w-24 h-24 rounded-2xl mx-auto mb-4 overflow-hidden">
                   <img 
                     src={member.image} 
                     alt={member.name}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      // Fallback to initials if image fails to load
                       const target = e.currentTarget as HTMLImageElement;
                       target.style.display = 'none';
                       const fallback = target.nextElementSibling as HTMLElement;
@@ -127,29 +130,44 @@ export default function Team() {
                   </div>
                 </div>
 
-                <div className="text-center mb-4 flex-grow">
+                <div className="text-center mb-4">
                   <h4 className="text-lg font-bold text-slate-800 mb-1">{member.name}</h4>
                   <p className="text-emerald-600 font-semibold mb-2">{member.role}</p>
                   <div className="flex items-center justify-center text-slate-500 text-sm mb-3">
                     <MapPin className="w-3 h-3 mr-1" />
                     {member.location}
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed">{member.bio}</p>
+                  <div className="h-16 flex items-center justify-center mb-4">
+                    <p className="text-slate-600 text-sm leading-relaxed text-center">{member.bio}</p>
+                  </div>
+                  
+                  {/* Social Links */}
+                  <div className="flex justify-center space-x-4 mb-4">
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-600 transition-colors">
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    )}
+                    {member.website && (
+                      <a href={member.website} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-600 transition-colors">
+                        <Globe className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
-                {/* Social Links - Fixed at bottom */}
-                <div className="flex justify-center space-x-4 mt-auto pt-4">
-                  {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-600 transition-colors">
-                      <Linkedin className="w-5 h-5" />
+                {/* Contact Section */}
+                {member.email && (
+                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
+                    <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wide text-center mb-2">Contact</p>
+                    <a 
+                      href={`mailto:${member.email}`} 
+                      className="text-emerald-800 hover:text-emerald-900 font-mono text-sm font-medium block bg-white/80 rounded-lg px-3 py-2 transition-colors hover:bg-white text-center"
+                    >
+                      {member.email}
                     </a>
-                  )}
-                  {member.website && (
-                    <a href={member.website} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-600 transition-colors">
-                      <Globe className="w-5 h-5" />
-                    </a>
-                  )}
-                </div>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>

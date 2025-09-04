@@ -4,6 +4,7 @@ import "./globals.css";
 import { CookieConsentProvider } from "@/components/CookieConsent";
 import FloatingPrivacyButton from "@/components/FloatingPrivacyButton";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +39,10 @@ export default function RootLayout({
       >
         <CookieConsentProvider>
           <GoogleAnalytics />
-          {children}
+          <Navbar />
+          <div style={{ paddingTop: '80px' }}>
+            {children}
+          </div>
           <FloatingPrivacyButton />
         </CookieConsentProvider>
       </body>

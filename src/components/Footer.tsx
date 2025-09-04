@@ -33,7 +33,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-emerald-400 mr-3" />
-                <span className="text-slate-300">teamsustainx@gmail.com</span>
+                <span className="text-slate-300">hello@ez-move.app</span>
               </div>
             </div>
           </motion.div>
@@ -85,7 +85,7 @@ export default function Footer() {
             <h4 className="text-xl font-bold text-white mb-6">Investors</h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:teamsustainx@gmail.com" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                <a href="mailto:investors@ez-move.app" className="text-slate-300 hover:text-emerald-400 transition-colors">
                   Investment Opportunities
                 </a>
               </li>
@@ -105,7 +105,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="mailto:teamsustainx@gmail.com" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                <a href="mailto:investors@ez-move.app" className="text-slate-300 hover:text-emerald-400 transition-colors">
                   Due Diligence
                 </a>
               </li>
@@ -163,7 +163,7 @@ export default function Footer() {
                 Invest Now
               </Link>
               <a
-                href="mailto:teamsustainx@gmail.com"
+                href="mailto:hello@ez-move.app"
                 className="border border-emerald-400 text-emerald-400 px-6 py-3 rounded-full font-semibold hover:bg-emerald-400 hover:text-slate-900 transition-all duration-300"
               >
                 Get Updates
