@@ -76,7 +76,7 @@ export default function Screenshots() {
 
   return (
     <>
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100 overflow-hidden">
+      <section id="screenshots" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100 overflow-hidden">
         <div className="w-full flex flex-col items-center justify-center">
           {/* Background Title */}
           <h1 className="about-title">APP SCREENSHOTS</h1>
