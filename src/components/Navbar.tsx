@@ -16,13 +16,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="group">
             <div className="flex items-center gap-3">
-              <Image 
+              <img 
                 src="/assets/images/ez.png" 
                 alt="EZMove Logo" 
                 width={48} 
                 height={48} 
-                className="rounded-2xl transition-all duration-300"
-                priority
+                className="rounded-2xl transition-all duration-300 w-12 h-12 object-cover"
               />
               <div className="flex flex-col">
                 <span className="font-black text-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">
