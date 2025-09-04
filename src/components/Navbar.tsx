@@ -144,9 +144,12 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-xl bg-slate-100 hover:bg-slate-200 transition-colors"
+            className="md:hidden p-2 rounded-xl bg-gradient-to-r from-emerald-100 to-teal-100 hover:from-emerald-200 hover:to-teal-200 transition-all duration-300 shadow-lg"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? 
+              <X className="w-6 h-6 text-emerald-700" /> : 
+              <Menu className="w-6 h-6 text-emerald-700" />
+            }
           </button>
         </div>
 
@@ -154,19 +157,39 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden mt-6 p-6 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20">
             <div className="space-y-4">
-              <Link href="#features" className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors">
+              <Link 
+                href="#features" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors"
+              >
                 Features
               </Link>
-              <Link href="#team" className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors">
+              <Link 
+                href="#team" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors"
+              >
                 Team
               </Link>
-              <Link href="#investors" className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors">
+              <Link 
+                href="#investors" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors"
+              >
                 Investors
               </Link>
-              <Link href="/careers" className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors">
+              <Link 
+                href="/careers" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors"
+              >
                 Careers
               </Link>
-              <Link href="#contact" className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors">
+              <Link 
+                href="#contact" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors"
+              >
                 Contact
               </Link>
               <div className="pt-4 border-t border-slate-200">
