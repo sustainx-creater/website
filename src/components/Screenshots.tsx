@@ -5,29 +5,54 @@ import { useState, useEffect } from 'react'
 
 const screenshots = [
   {
-    src: '/assets/screenshots/1.png',
-    title: 'Dashboard Overview',
-    description: 'Your complete relocation journey at a glance'
+    src: '/assets/screenshots/home page.png',
+    title: 'Home Page',
+    description: 'The main dashboard featuring promoted content and trending updates.'
   },
   {
-    src: '/assets/screenshots/2.png',
-    title: 'Visa Tracker',
-    description: 'Real-time visa application status updates'
+    src: '/assets/screenshots/articles.png',
+    title: 'Articles',
+    description: 'Browse a curated list of insightful articles from across the website.'
   },
   {
-    src: '/assets/screenshots/3.png',
-    title: 'AI Assistant',
-    description: 'Get instant answers to your relocation questions'
+    src: '/assets/screenshots/buddy connect.png',
+    title: 'Buddy Connect',
+    description: 'Easily schedule a call with a community buddy for personalized support.'
   },
   {
-    src: '/assets/screenshots/4.png',
-    title: 'Housing Finder',
-    description: 'Discover verified accommodations with insights'
+    src: '/assets/screenshots/chatbot.png',
+    title: 'Chatbot',
+    description: 'Interact with our advanced LLM-powered chatbot for instant assistance.'
   },
   {
-    src: '/assets/screenshots/5.png',
-    title: 'Community Hub',
-    description: 'Connect with fellow immigrants and locals'
+    src: '/assets/screenshots/community home page.png',
+    title: 'Community Home Page',
+    description: 'Your entry point to the community forum, featuring the latest discussions.'
+  },
+  {
+    src: '/assets/screenshots/community forum.png',
+    title: 'Community Forum',
+    description: 'Engage with the community by posting questions and responding to others.'
+  },
+  {
+    src: '/assets/screenshots/events page.png',
+    title: 'Events Page',
+    description: 'Discover, schedule, and register for upcoming community events.'
+  },
+  {
+    src: '/assets/screenshots/house listing.png',
+    title: 'House Listing',
+    description: 'View detailed listings of individual accommodations available on the app.'
+  },
+  {
+    src: '/assets/screenshots/housing home page.png',
+    title: 'Housing Home Page',
+    description: 'Explore trending accommodations, add new listings, and see ML-driven insights.'
+  },
+  {
+    src: '/assets/screenshots/profile pane.png',
+    title: 'Profile Pane',
+    description: 'Access important features, edit your profile, and sign out quickly.'
   }
 ]
 
