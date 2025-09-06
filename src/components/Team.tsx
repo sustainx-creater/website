@@ -47,13 +47,13 @@ const teamMembers = [
 const advisors = [
   {
     name: 'Suvendu Chatterjee',
-    role: 'UI/UX Expert',
+    role: 'Global Innovation Labs Vice President',
     company: 'Citi',
     bio: 'UI/UX expert with deep experience in user-centered design and product development.'
   },
   {
     name: 'Kirti Dhemre',
-    role: 'Mentor',
+    role: 'VP- Project Manager',
     company: 'Citi',
     bio: 'Strategic advisor with expertise in product development and market expansion.'
   },
@@ -65,7 +65,7 @@ const advisors = [
   },
   {
     name: 'Halima Chukur',
-    role: 'GDPR Expert',
+    role: 'HR Global Data Privacy Compliance Lead',
     company: 'Citi',
     bio: 'Expert in GDPR compliance and data protection, ensuring regulatory adherence.'
   },
