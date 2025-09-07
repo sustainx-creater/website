@@ -4,14 +4,9 @@ import { useEffect } from 'react';
 
 export default function ResetPasswordPage() {
   useEffect(() => {
-    // Get the code param from the URL
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
-    if (code) {
-      window.location.href = `ezmove://reset-password?code=${encodeURIComponent(code)}`;
-    } else {
-      window.location.href = 'ezmove://reset-password';
-    }
+    // Pass the entire query string (e.g. ?code=...&flow_state=...) to the app
+    const query = window.location.search; // includes ?
+    window.location.replace(`ezmove://reset-password${query}`);
   }, []);
 
   return (
