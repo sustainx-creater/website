@@ -88,9 +88,21 @@ function ResetPasswordForm() {
       if (error) {
         setError(error.message);
       } else {
-        setMessage('Password updated successfully! You can now close this page and use your new password to log in to the EZMove app.');
+        setMessage('Password updated successfully! Redirecting you back to the app...');
         setPassword('');
         setConfirmPassword('');
+        
+        // Redirect to app after 3 seconds
+        setTimeout(() => {
+          // Try to redirect to the app using deep link
+          const appRedirectUrl = 'com.example.ezmove://reset-success';
+          window.location.href = appRedirectUrl;
+          
+          // Fallback message if the app doesn't open
+          setTimeout(() => {
+            setMessage('Password updated successfully! You can now close this page and use your new password to log in to the EZMove app.');
+          }, 2000);
+        }, 3000);
       }
     } catch (err) {
       setError('An unexpected error occurred. Please try again.');
