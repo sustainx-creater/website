@@ -4,10 +4,18 @@ import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { useSearchParams } from 'next/navigation';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+// Force dynamic rendering to avoid build-time errors
+export const dynamic = 'force-dynamic';
+
+// Create Supabase client with fallback for missing env variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+let supabase: any = null;
+
+if (supabaseUrl && supabaseAnonKey) {
+  supabase = createClient(supabaseUrl, supabaseAnonKey);
+}
 
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState('');
@@ -20,6 +28,12 @@ export default function ResetPasswordPage() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    // Check if Supabase is configured
+    if (!supabase) {
+      setError('Service temporarily unavailable. Please try again later.');
+      return;
+    }
+
     // Check if we have the required tokens from Supabase
     const accessToken = searchParams.get('access_token');
     const refreshToken = searchParams.get('refresh_token');
@@ -39,6 +53,12 @@ export default function ResetPasswordPage() {
 
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!supabase) {
+      setError('Service temporarily unavailable. Please try again later.');
+      return;
+    }
+    
     setLoading(true);
     setError('');
     setMessage('');
