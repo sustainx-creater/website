@@ -1,23 +1,35 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 // Force dynamic rendering to avoid build-time errors
 export const dynamic = 'force-dynamic';
 
-// Create Supabase client with fallback for missing env variables
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
+// Lazy load Supabase to avoid build-time issues
 let supabase: any = null;
 
-if (supabaseUrl && supabaseAnonKey) {
-  supabase = createClient(supabaseUrl, supabaseAnonKey);
-}
+const initSupabase = async () => {
+  if (supabase) return supabase;
+  
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-export default function ResetPasswordPage() {
+  if (supabaseUrl && supabaseAnonKey) {
+    try {
+      const { createClient } = await import('@supabase/supabase-js');
+      supabase = createClient(supabaseUrl, supabaseAnonKey);
+      return supabase;
+    } catch (error) {
+      console.error('Failed to load Supabase client:', error);
+      return null;
+    }
+  }
+  
+  return null;
+};
+
+function ResetPasswordForm() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -28,33 +40,40 @@ export default function ResetPasswordPage() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Check if Supabase is configured
-    if (!supabase) {
-      setError('Service temporarily unavailable. Please try again later.');
-      return;
-    }
+    const initializeSupabase = async () => {
+      const supabaseClient = await initSupabase();
+      
+      if (!supabaseClient) {
+        setError('Service temporarily unavailable. Please try again later.');
+        return;
+      }
 
-    // Check if we have the required tokens from Supabase
-    const accessToken = searchParams.get('access_token');
-    const refreshToken = searchParams.get('refresh_token');
-    const type = searchParams.get('type');
+      // Check if we have the required tokens from Supabase
+      const accessToken = searchParams.get('access_token');
+      const refreshToken = searchParams.get('refresh_token');
+      const type = searchParams.get('type');
 
-    if (type === 'recovery' && accessToken && refreshToken) {
-      setIsValidToken(true);
-      // Set the session with the tokens
-      supabase.auth.setSession({
-        access_token: accessToken,
-        refresh_token: refreshToken,
-      });
-    } else {
-      setError('Invalid or expired reset link. Please request a new password reset.');
-    }
+      if (type === 'recovery' && accessToken && refreshToken) {
+        setIsValidToken(true);
+        // Set the session with the tokens
+        await supabaseClient.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken,
+        });
+      } else {
+        setError('Invalid or expired reset link. Please request a new password reset.');
+      }
+    };
+
+    initializeSupabase();
   }, [searchParams]);
 
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!supabase) {
+    const supabaseClient = await initSupabase();
+    
+    if (!supabaseClient) {
       setError('Service temporarily unavailable. Please try again later.');
       return;
     }
@@ -77,7 +96,7 @@ export default function ResetPasswordPage() {
     }
 
     try {
-      const { data, error } = await supabase.auth.updateUser({
+      const { data, error } = await supabaseClient.auth.updateUser({
         password: password
       });
 
@@ -187,5 +206,26 @@ export default function ResetPasswordPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Loading fallback component
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-emerald-500 border-t-transparent mx-auto mb-4"></div>
+        <p className="text-gray-600">Loading...</p>
+      </div>
+    </div>
+  );
+}
+
+// Main component wrapped in Suspense
+export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <ResetPasswordForm />
+    </Suspense>
   );
 }
