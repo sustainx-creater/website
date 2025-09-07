@@ -48,20 +48,43 @@ function ResetPasswordForm() {
         return;
       }
 
-      // Check if we have the required tokens from Supabase
+      // Check for different types of reset parameters
       const accessToken = searchParams.get('access_token');
       const refreshToken = searchParams.get('refresh_token');
       const type = searchParams.get('type');
+      const code = searchParams.get('code');
 
-      if (type === 'recovery' && accessToken && refreshToken) {
-        setIsValidToken(true);
-        // Set the session with the tokens
-        await supabaseClient.auth.setSession({
-          access_token: accessToken,
-          refresh_token: refreshToken,
-        });
-      } else {
-        setError('Invalid or expired reset link. Please request a new password reset.');
+      try {
+        // Handle token-based reset (direct tokens)
+        if (type === 'recovery' && accessToken && refreshToken) {
+          setIsValidToken(true);
+          // Set the session with the tokens
+          await supabaseClient.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken,
+          });
+        }
+        // Handle code-based reset (authorization code flow)
+        else if (code) {
+          // Exchange the code for a session
+          const { data, error } = await supabaseClient.auth.exchangeCodeForSession(code);
+          
+          if (error) {
+            console.error('Code exchange error:', error);
+            setError('Invalid or expired reset link. Please request a new password reset.');
+          } else if (data?.session) {
+            setIsValidToken(true);
+            // The session is automatically set by exchangeCodeForSession
+          } else {
+            setError('Unable to validate reset link. Please request a new password reset.');
+          }
+        }
+        else {
+          setError('Invalid or expired reset link. Please request a new password reset.');
+        }
+      } catch (err) {
+        console.error('Reset link validation error:', err);
+        setError('Error validating reset link. Please try again.');
       }
     };
 
