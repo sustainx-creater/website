@@ -95,7 +95,7 @@ function ResetPasswordForm() {
         // Redirect to app after 3 seconds
         setTimeout(() => {
           // Try to redirect to the app using deep link
-          const appRedirectUrl = 'com.example.ezmove://reset-success';
+          const appRedirectUrl = 'ezmove://reset-success';
           window.location.href = appRedirectUrl;
           
           // Fallback message if the app doesn't open
