@@ -174,9 +174,21 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-slate-400 text-sm">
               © 2025 SustainX Technologies Ltd. All rights reserved.
+            </div>
+            
+            <div className="flex items-center gap-6 text-sm">
+              <Link href="/privacy" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/support" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                Support
+              </Link>
+              <Link href="/account-deletion" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                Delete Account
+              </Link>
             </div>
           </div>
           
