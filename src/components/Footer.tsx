@@ -183,6 +183,9 @@ export default function Footer() {
               <Link href="/privacy" className="text-slate-400 hover:text-emerald-400 transition-colors">
                 Privacy Policy
               </Link>
+              <Link href="/child-safety" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                Child Safety
+              </Link>
               <Link href="/support" className="text-slate-400 hover:text-emerald-400 transition-colors">
                 Support
               </Link>
