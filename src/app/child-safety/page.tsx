@@ -109,8 +109,8 @@ export default function ChildSafety() {
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-800 mb-3">Direct Contact</h3>
                 <div className="space-y-2 text-blue-700">
-                  <p><strong>Safety Team:</strong></p>
-                  <p>Email: <a href="mailto:safety@ez-move.app" className="underline font-medium">safety@ez-move.app</a></p>
+                  <p><strong>Support Team:</strong></p>
+                  <p>Email: <a href="mailto:support@ez-move.app" className="underline font-medium">support@ez-move.app</a></p>
                   <p><strong>Developer Contact:</strong></p>
                   <p>Email: <a href="mailto:adityashubhampandey@gmail.com" className="underline font-medium">adityashubhampandey@gmail.com</a></p>
                 </div>
@@ -188,10 +188,9 @@ export default function ChildSafety() {
                 </div>
                 
                 <div>
-                  <h3 className="font-semibold text-gray-800 mb-3">Safety Team</h3>
+                  <h3 className="font-semibold text-gray-800 mb-3">Support Team</h3>
                   <div className="space-y-2 text-gray-700">
-                    <p><strong>Safety Email:</strong> <a href="mailto:safety@ez-move.app" className="text-emerald-600 hover:text-emerald-700 underline">safety@ez-move.app</a></p>
-                    <p><strong>General Support:</strong> <a href="mailto:support@ez-move.app" className="text-emerald-600 hover:text-emerald-700 underline">support@ez-move.app</a></p>
+                    <p><strong>Support Email:</strong> <a href="mailto:support@ez-move.app" className="text-emerald-600 hover:text-emerald-700 underline">support@ez-move.app</a></p>
                     <p><strong>Response Time:</strong> Within 24 hours</p>
                     <p><strong>Emergency:</strong> Immediate review</p>
                   </div>
