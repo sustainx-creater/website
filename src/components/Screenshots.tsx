@@ -104,7 +104,7 @@ export default function Screenshots() {
       <section id="screenshots" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100 overflow-hidden">
         <div className="w-full flex flex-col items-center justify-center">
           {/* Background Title */}
-          <h1 className="about-title">APP SCREENSHOTS</h1>
+          <h1 className="about-title">GLIMPSE OF APP</h1>
 
           {/* Carousel - Centered Container */}
           <div className="carousel-container">
