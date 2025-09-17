@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Sitemap: https://ez-move.app/sitemap.xml
+
+# Block admin areas (if any in the future)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow search engines to crawl all public pages
+Allow: /
+Allow: /privacy
+Allow: /support
+Allow: /download
+Allow: /careers
+Allow: /account-deletion
+Allow: /child-safety
+
+# Crawl delay
+Crawl-delay: 1

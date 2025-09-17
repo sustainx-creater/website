@@ -74,12 +74,14 @@ const USER_DATA_KEY = 'user-data';
 const CONSENT_EXPIRY_DAYS = 365;
 
 const setCookie = (name: string, value: string, days: number) => {
+  if (typeof window === 'undefined') return;
   const expires = new Date();
   expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
   document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
 };
 
 const getCookie = (name: string): string | null => {
+  if (typeof window === 'undefined') return null;
   const nameEQ = name + "=";
   const ca = document.cookie.split(';');
   for (let i = 0; i < ca.length; i++) {
@@ -96,6 +98,8 @@ const removeCookie = (name: string) => {
 
 // User data management based on consent
 const collectUserData = async (consent: CookieConsent) => {
+  if (typeof window === 'undefined') return null;
+  
   const userData: UserConsentData = {
     timestamp: new Date().toISOString(),
     consent: consent
@@ -147,8 +151,12 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
   const [consent, setConsent] = useState<CookieConsent | null>(null);
   const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Set mounted to true after first render to prevent hydration mismatch
+    setMounted(true);
+    
     // Check for existing consent on mount
     const existingConsent = getCookie(CONSENT_COOKIE_NAME);
     if (existingConsent) {

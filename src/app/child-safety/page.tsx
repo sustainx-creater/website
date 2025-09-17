@@ -247,7 +247,7 @@ export default function ChildSafety() {
             These child safety standards are part of our commitment to user safety and comply with Google Play Store requirements.
           </p>
           <p className="mt-2">
-            Last updated: {new Date().toLocaleDateString()} | Version 1.0
+            Last updated: September 16, 2025 | Version 1.0
           </p>
           <div className="mt-4 space-x-4">
             <Link href="/privacy" className="hover:text-gray-700">Privacy Policy</Link>

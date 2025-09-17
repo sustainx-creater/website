@@ -1,0 +1,38 @@
+{
+  "name": "EZMove - Relocation Made Simple",
+  "short_name": "EZMove",
+  "description": "Streamline your relocation process with EZMove. Professional visa assistance, document management, and expert guidance for your journey to a new country.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/ez.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "travel"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "id": "ezmove-app"
+}
