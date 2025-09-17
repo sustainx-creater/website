@@ -64,56 +64,56 @@ export default function DownloadPage() {
                   </div>
 
                   {/* Play Store Internal Testing */}
-                  <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm">
+                  <div className="bg-white rounded-2xl p-6 border border-emerald-200 shadow-sm">
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center">
                         <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Play Store Internal Testing</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Google Play Testing</h3>
                         <p className="text-sm text-gray-600 mb-4">
-                          Access our latest version through Google Play Store internal testing program.
+                          Join our beta testing program through Google Play Store and get early access to new features.
                         </p>
                         <a
                           href="https://play.google.com/apps/internaltest/4701551318107611397"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                          className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                         >
                           <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
                           </svg>
-                          Join Testing
+                          Join Beta Testing
                         </a>
-                        <p className="text-xs text-blue-600 mt-2">
-                          * Requires Google account and testing access
+                        <p className="text-xs text-emerald-600 mt-2">
+                          * Requires Google account and testing approval
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* Request Access */}
-                  <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-200">
+                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-200">
                     <div className="text-center">
-                      <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Want Latest Access?</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Need Latest Features?</h3>
                       <p className="text-sm text-gray-600 mb-4">
-                        For access to the latest features and testing versions, reach out to our team.
+                        Get priority access to cutting-edge features and exclusive beta releases.
                       </p>
                       <a
                         href="mailto:support@ez-move.app?subject=App Access Request&body=Hi, I would like access to the latest version of the EZMove app."
-                        className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                        className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                       >
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        Request Access
+                        Request Priority Access
                       </a>
                     </div>
                   </div>
@@ -176,6 +176,133 @@ export default function DownloadPage() {
                       <span className="text-sm text-gray-700">Local events & networking</span>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* App Screenshots Section */}
+        <section className="text-center">
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              App <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Preview</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+              Get a glimpse of EZMove's intuitive interface and powerful features designed to make your relocation seamless.
+            </p>
+
+            {/* Screenshots Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {/* Home Page */}
+              <div className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 mb-4">
+                  <img 
+                    src="/assets/screenshots/home page.png" 
+                    alt="EZMove Home Page" 
+                    className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Dashboard Overview</h3>
+                <p className="text-sm text-gray-600">Your personalized relocation hub with quick access to all features</p>
+              </div>
+
+              {/* Housing */}
+              <div className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 mb-4">
+                  <img 
+                    src="/assets/screenshots/house listing.png" 
+                    alt="EZMove Housing Search" 
+                    className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Smart Housing Search</h3>
+                <p className="text-sm text-gray-600">AI-powered property recommendations tailored to your needs</p>
+              </div>
+
+              {/* Community */}
+              <div className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 mb-4">
+                  <img 
+                    src="/assets/screenshots/community home page.png" 
+                    alt="EZMove Community Features" 
+                    className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Community Connect</h3>
+                <p className="text-sm text-gray-600">Connect with fellow relocators and find your support network</p>
+              </div>
+
+              {/* Buddy Connect */}
+              <div className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 mb-4">
+                  <img 
+                    src="/assets/screenshots/buddy connect.png" 
+                    alt="EZMove Buddy Connect" 
+                    className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Buddy Matching</h3>
+                <p className="text-sm text-gray-600">Get matched with experienced locals to guide your journey</p>
+              </div>
+
+              {/* Events */}
+              <div className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 mb-4">
+                  <img 
+                    src="/assets/screenshots/events page.png" 
+                    alt="EZMove Events" 
+                    className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Local Events</h3>
+                <p className="text-sm text-gray-600">Discover networking events and social activities in your area</p>
+              </div>
+
+              {/* AI Chatbot */}
+              <div className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 mb-4">
+                  <img 
+                    src="/assets/screenshots/chatbot.png" 
+                    alt="EZMove AI Assistant" 
+                    className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">AI Assistant</h3>
+                <p className="text-sm text-gray-600">Get instant answers to your relocation questions 24/7</p>
+              </div>
+            </div>
+
+            {/* Feature Highlights */}
+            <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-12 text-white">
+              <h3 className="text-3xl font-bold mb-8">Why Users Love EZMove</h3>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-xl font-semibold mb-2">Lightning Fast</h4>
+                  <p className="text-emerald-100">Find housing and connect with community in minutes, not months</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-xl font-semibold mb-2">AI-Powered</h4>
+                  <p className="text-emerald-100">Smart recommendations based on your preferences and needs</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-xl font-semibold mb-2">Community First</h4>
+                  <p className="text-emerald-100">Join a supportive network of people who understand your journey</p>
                 </div>
               </div>
             </div>

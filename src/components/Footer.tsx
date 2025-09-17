@@ -19,7 +19,7 @@ export default function Footer() {
           >
             <div className="mb-6">
               <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-4">
-                SustainX
+                EZMove
               </h3>
               <p className="text-slate-300 text-lg leading-relaxed max-w-md">
                 Revolutionizing the relocation experience through technology. Making the journey to Ireland simple, transparent, and stress-free.
@@ -176,7 +176,7 @@ export default function Footer() {
         <div className="border-t border-slate-800 pt-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-slate-400 text-sm">
-              © 2025 SustainX Technologies Ltd. All rights reserved.
+              © 2025 EZMove. All rights reserved.
             </div>
             
             <div className="flex items-center gap-6 text-sm">
@@ -197,7 +197,7 @@ export default function Footer() {
           
           <div className="mt-6 text-center">
             <p className="text-slate-500 text-sm">
-              SustainX is committed to making relocation accessible for everyone.
+              EZMove is committed to making relocation accessible for everyone.
             </p>
           </div>
         </div>

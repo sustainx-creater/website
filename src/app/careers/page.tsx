@@ -125,7 +125,7 @@ export default function CareersPage() {
             Send us your CV and a note about why you're passionate about helping people relocate to Ireland.
           </p>
           <a
-            href="mailto:teamsustainx@gmail.com?subject=Career Interest - EZMove"
+            href="mailto:careers@ez-move.app?subject=Career Interest - EZMove"
             className="inline-block bg-white text-emerald-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
           >
             Get in Touch

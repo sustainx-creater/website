@@ -112,7 +112,7 @@ export default function ChildSafety() {
                   <p><strong>Support Team:</strong></p>
                   <p>Email: <a href="mailto:support@ez-move.app" className="underline font-medium">support@ez-move.app</a></p>
                   <p><strong>Developer Contact:</strong></p>
-                  <p>Email: <a href="mailto:adityashubhampandey@gmail.com" className="underline font-medium">adityashubhampandey@gmail.com</a></p>
+                  <p>Email: <a href="mailto:support@ez-move.app" className="underline font-medium">support@ez-move.app</a></p>
                 </div>
               </div>
             </div>
@@ -182,8 +182,8 @@ export default function ChildSafety() {
                   <div className="space-y-2 text-gray-700">
                     <p><strong>Name:</strong> Aditya Shubham Pandey</p>
                     <p><strong>Title:</strong> Developer & Safety Officer</p>
-                    <p><strong>Email:</strong> <a href="mailto:adityashubhampandey@gmail.com" className="text-emerald-600 hover:text-emerald-700 underline">adityashubhampandey@gmail.com</a></p>
-                    <p><strong>Company:</strong> SustainX Technologies Ltd</p>
+                    <p><strong>Email:</strong> <a href="mailto:support@ez-move.app" className="text-emerald-600 hover:text-emerald-700 underline">support@ez-move.app</a></p>
+                    <p><strong>Company:</strong> EZMove</p>
                   </div>
                 </div>
                 

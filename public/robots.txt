@@ -1,12 +1,33 @@
 User-agent: *
 Allow: /
 
-# Important pages
+# AI Crawlers and Language Models
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Important pages for AI understanding
 Sitemap: https://ez-move.app/sitemap.xml
+
+# Key content areas for AI crawlers
+Allow: /download
+Allow: /support
+Allow: /privacy
+Allow: /child-safety
+Allow: /careers
+Allow: /ai-info
 
 # Block admin areas (if any in the future)
 Disallow: /admin/
-Disallow: /api/
+Disallow: /api/user-data
 
 # Allow search engines to crawl all public pages
 Allow: /

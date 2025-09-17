@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Lottie from 'lottie-react'
+import BetaSignup from './BetaSignup'
 
 const features = [
   {
@@ -43,7 +44,8 @@ const features = [
   }
 ]
 
-export default function Features() {
+function Features() {
+  const [isBetaModalOpen, setIsBetaModalOpen] = useState(false)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [lottieAnimations, setLottieAnimations] = useState<{[key: string]: any}>({});
 
@@ -131,17 +133,35 @@ export default function Features() {
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
               Be part of our closed beta testing in Ireland and help shape the future of relocation
             </p>
-            <motion.a
-              href="mailto:teamsustainx@gmail.com?subject=Early Access Request - EZMove"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
-            >
-              Get Early Access
-            </motion.a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <motion.a
+                href="/download"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
+              >
+                Download Now
+              </motion.a>
+              <motion.button
+                onClick={() => setIsBetaModalOpen(true)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block bg-white border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-emerald-50 transition-all duration-300"
+              >
+                Join Beta Program
+              </motion.button>
+            </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Beta Signup Modal */}
+      <BetaSignup 
+        isOpen={isBetaModalOpen} 
+        onClose={() => setIsBetaModalOpen(false)} 
+      />
     </section>
   )
 }
+
+export default Features
