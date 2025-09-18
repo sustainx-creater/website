@@ -5,6 +5,7 @@ import { CookieConsentProvider } from "@/components/CookieConsent";
 import FloatingPrivacyButton from "@/components/FloatingPrivacyButton";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Navbar from "@/components/Navbar";
+import ConditionalLayout from "@/components/ConditionalLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "EZMove - AI-Powered Relocation Platform for Ireland",
   description: "EZMove is the leading AI-powered relocation platform helping international students and professionals move to Ireland. Get verified housing listings, visa assistance, community connections, and local guidance. Download our app for seamless relocation experience.",
-  keywords: "relocation Ireland, move to Ireland, housing Ireland, visa assistance Ireland, international students Ireland, Dublin housing, AI housing search, relocation app, Ireland visa, community platform, buddy connect, document tracking, expat Ireland, student accommodation Dublin",
+  keywords: "relocation Ireland, move to Ireland, housing Ireland, visa assistance Ireland, international students Ireland, Dublin housing, Cork housing, Galway relocation, AI housing search, relocation app, Ireland visa, community platform, buddy connect, document tracking, expat Ireland, student accommodation Dublin, moving to Dublin, emigrate to Ireland, Ireland immigration app, best relocation app Ireland, find housing Dublin, Irish visa support, study in Ireland, work in Ireland, Irish apartment search",
   authors: [{ name: "EZMove" }],
   creator: "EZMove",
   publisher: "EZMove",
@@ -70,11 +71,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -114,9 +113,9 @@ export default function RootLayout({
         <CookieConsentProvider>
           <GoogleAnalytics />
           <Navbar />
-          <div style={{ paddingTop: '80px' }}>
+          <ConditionalLayout>
             {children}
-          </div>
+          </ConditionalLayout>
           <FloatingPrivacyButton />
         </CookieConsentProvider>
       </body>

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "Careers - EZMove | Join Our Team",
-  description: "Join the EZMove team and help us build the future of relocation technology in Ireland. Currently in closed beta with future opportunities available.",
-  keywords: "EZMove careers, jobs Ireland, relocation technology, startup jobs, Dublin jobs",
+  title: "Visa Tracking - EZMove | Track Your Ireland Visa Status",
+  description: "Track your Ireland visa application status with EZMove. Get real-time updates on your visa processing, document verification, and approval timeline. Secure and reliable visa tracking system.",
+  keywords: "visa tracking Ireland, Ireland visa status, visa application tracker, visa processing time Ireland, track visa application, Ireland visa updates, visa status checker, immigration status Ireland",
 };
 
-export default function CareersLayout({
+export default function VisaTrackingLayout({
   children,
 }: {
   children: React.ReactNode;

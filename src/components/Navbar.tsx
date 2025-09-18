@@ -3,11 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, Mail, Users, Phone, TrendingUp } from "lucide-react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isEmailsOpen, setIsEmailsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Hide navbar on visa-tracking and careers pages
+  if (pathname === '/visa-tracking' || pathname === '/careers') {
+    return null;
+  }
 
   return (
     <nav className="w-full bg-white shadow-lg border-b border-slate-200 fixed top-0 left-0 z-50">
@@ -49,6 +56,10 @@ export default function Navbar() {
               </Link>
               <Link href="/careers" className="group relative px-4 py-2 rounded-lg hover:bg-emerald-50 transition-all duration-300">
                 <span className="font-semibold text-slate-700 group-hover:text-emerald-700 transition-colors">Careers</span>
+                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
+              </Link>
+              <Link href="/visa-tracking" className="group relative px-4 py-2 rounded-lg hover:bg-emerald-50 transition-all duration-300">
+                <span className="font-semibold text-slate-700 group-hover:text-emerald-700 transition-colors">Visa Tracking</span>
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
               </Link>
               <Link href="#contact" className="group relative px-4 py-2 rounded-lg hover:bg-emerald-50 transition-all duration-300">
@@ -184,6 +195,13 @@ export default function Navbar() {
                 className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors"
               >
                 Careers
+              </Link>
+              <Link 
+                href="/visa-tracking" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block p-3 rounded-xl hover:bg-emerald-50 font-semibold text-slate-700 hover:text-emerald-700 transition-colors"
+              >
+                Visa Tracking
               </Link>
               <Link 
                 href="#contact" 

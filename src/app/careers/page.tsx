@@ -1,27 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { ArrowLeft, MapPin, Clock, Users } from 'lucide-react'
+import { MapPin, Clock, Users } from 'lucide-react'
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
-      {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <Link 
-            href="/"
-            className="inline-flex items-center text-slate-600 hover:text-emerald-600 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Home
-          </Link>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-20">
+    <div className="max-w-4xl mx-auto px-6 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -132,6 +116,5 @@ export default function CareersPage() {
           </a>
         </motion.div>
       </div>
-    </div>
   )
 }
